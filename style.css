@@ -1,0 +1,92 @@
+body{
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+nav ul{
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+main {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.score-container{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px
+}
+.score{
+  font-size: 4rem;
+  text-align: center;
+}
+.score::before{
+  content: "PLAYER";
+  font-size: 1.2rem;
+  display: block;
+}
+.score.score-cpu::before{
+  content: "CPU";
+}
+
+.doors-container {
+  display: grid;
+  margin: 50px auto;
+  grid-gap: 10px 1%;
+  grid-template-columns: repeat(auto-fill, calc((100% - 2%) / 3));
+}
+
+.doors-container.grid-4{
+  grid-gap: 10px 1%;
+  grid-template-columns: repeat(auto-fill, calc((100% - 3%) / 4));
+}
+.doors-container.grid-5{
+  grid-gap: 10px 1%;
+  grid-template-columns: repeat(auto-fill, calc((100% - 4%) / 5));
+}
+.doors-container.grid-10{
+  grid-gap: 10px 1%;
+  grid-template-columns: repeat(auto-fill, calc((100% - 9%) / 10));
+}
+
+.door{
+  background-color: #D2B56C;
+  text-align: center;
+  padding: 20px 0;
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+
+.door.door-selected{
+  box-shadow: 0px 0px 10px 0px #888;
+}
+
+.door.door-opened{
+  background-color: #DEDEDE;
+  cursor: not-allowed;
+}
+
+.door.door-prize{
+  background-color: #A6F768;
+}
+
+.actions-container{
+  margin: 20px auto;
+}
+
+.actions-container button{
+  border: none;
+  background-color: #AA88DD;
+  font-size: 1.5rem;
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  outline: none;
+  margin-bottom: 10px;
+}
